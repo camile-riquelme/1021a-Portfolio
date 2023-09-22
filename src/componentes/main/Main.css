@@ -1,0 +1,22 @@
+.content-main{
+    display: flex;
+    gap: 15px;
+    padding: 15px 100px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.campo_pesquisa{
+    padding: 15px 100px;
+}
+.botao_pesquisa{
+    height: 30px;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+
+}
+.botao_pesquisa:focus {
+    outline: 1px solid rgb(138, 157, 255);  
+   }
+.botao_pesquisa.visited {
+    outline: 1px solid rgb(138, 157, 255);   
+}
