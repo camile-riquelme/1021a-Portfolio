@@ -55,7 +55,7 @@ export default function Main() {
                        className='botao_pesquisa'
                        placeholder='Pesquise um Projeto'
                        onChange={TrataTexto} />
-                {texto && <p>Resultados Para: {texto} </p>}
+                {texto && <p> Resultados Para: {texto} </p>}
             </div>
             <main className="content-main">
                 {/* 
