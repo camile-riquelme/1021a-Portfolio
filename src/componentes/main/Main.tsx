@@ -29,7 +29,7 @@ export default function Main() {
         },
         {
             id:3,
-            titulo:'Semana de Ciência e Tecnologia',
+            titulo:'Semana de Ciência e Tecnologia 2022',
             sinopse:'Tiveram palestras, oficinas, mesas-redondas, além das Feiras de Ciência e Tecnologia, e espaços para apresentações de trabalhos científicos.',
             imagem:'/ciencia-e-tecnologia.png'
         },
