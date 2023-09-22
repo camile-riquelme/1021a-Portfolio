@@ -17,26 +17,26 @@ export default function Main() {
     const filmes:FilmeType[] = [
         {
             id:1,
-            titulo:'Monitoria',
-            sinopse:"Realizei monitoria para estudantes que precisavam de ajuda para atividades escolares",
+            titulo:'Monitoria 2022',
+            sinopse:"Ficava à disposição para tirar as dúvidas e ajudar alguns alunos com dificuldades. Cada monitoria era realizada em um determinado horário, e somente para uma disciplina determinada.",
             imagem:'/barbie.png'
         },
         {
             id:2,
-            titulo:'Semana do Meio Ambiente 2022',
-            sinopse:'Depois de ser expulsa da Barbieland por ser.',
-            imagem:'/propagacao-de-plantas.jpg'
+            titulo:'Semana do Meio Ambiente 2023',
+            sinopse:'Participei do Minicurso - Propagação de plantas por métodos assexuados. O curso falou a respeito das técnicas de propagação de plantas via assexuada, tais como: enxertia por gemas, estacas e alporquias.',
+            imagem:'/semana-meio-ambiente.png'
         },
         {
             id:3,
-            titulo:'Filme Barbie',
-            sinopse:'Depois de ser expulsa da Barbieland por ser uma boneca de aparência menos do que perfeita, Barbie parte para o mundo humano em busca da verdadeira felicidade.',
+            titulo:'Curso preparatório para Interpretação e Produção Textual',
+            sinopse:'Foi realizada a preparação, por meio de encontros semanais, pois o seu foco era produção de redação.',
             imagem:'/boneca.jpg'
         },
         {
             id:5,
-            titulo:'Barbie',
-            sinopse:"Depois de ser expulsa da Barbieland por ser uma boneca de aparência menos do que perfeita, Barbie parte para o mundo humano em busca da verdadeira felicidade.",
+            titulo:'Minicurso FOCO no ENEM: Como produzir uma redação nota 1000?',
+            sinopse:"aaa.",
             imagem:'/barbie.png'
         },
     ]
