@@ -36,7 +36,7 @@ export default function Main() {
         {
             id:5,
             titulo:'Minicurso FOCO no ENEM: Como produzir uma redação nota 1000?',
-            sinopse:"Participação no minicurso que foi realizado.",
+            sinopse:"Participação no minicurso que foi realizado em 2021.",
             imagem:'/barbie.png'
         },
     ]
