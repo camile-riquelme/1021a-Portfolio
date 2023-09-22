@@ -24,7 +24,7 @@ export default function Main() {
         {
             id:2,
             titulo:'Semana do Meio Ambiente 2023',
-            sinopse:'Participei do Minicurso - Propagação de plantas por métodos assexuados. O curso falou a respeito das técnicas de propagação de plantas via assexuada, tais como: enxertia por gemas, estacas e alporquias.',
+            sinopse:'Participei do Minicurso - Propagação de plantas por métodos assexuados. O curso abordou o tema das técnicas de propagação de plantas via assexuada, tais como: enxertia por gemas, estacas e alporquias.',
             imagem:'/semana-meio-ambiente.png'
         },
         {
