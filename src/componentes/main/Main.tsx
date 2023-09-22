@@ -19,7 +19,7 @@ export default function Main() {
             id:1,
             titulo:'Monitoria 2022',
             sinopse:"Ficava à disposição para tirar as dúvidas e ajudar alguns alunos com dificuldades. Cada monitoria era realizada em um determinado horário, e somente para uma disciplina determinada.",
-            imagem:'/barbie.png'
+            imagem:'/monitoria.jpg'
         },
         {
             id:2,
@@ -29,15 +29,15 @@ export default function Main() {
         },
         {
             id:3,
-            titulo:'Curso preparatório para Interpretação e Produção Textual',
-            sinopse:'Foi realizada a preparação, por meio de encontros semanais em 2022, pois o seu foco era produção de redação.',
-            imagem:'/boneca.jpg'
+            titulo:'Semana de Ciência e Tecnologia',
+            sinopse:'Tiveram palestras, oficinas, mesas-redondas, além das Feiras de Ciência e Tecnologia, e espaços para apresentações de trabalhos científicos.',
+            imagem:'/ciencia-e-tecnologia.png'
         },
         {
             id:5,
-            titulo:'Minicurso FOCO no ENEM: Como produzir uma redação nota 1000?',
-            sinopse:"Participação no minicurso que foi realizado em 2021.",
-            imagem:'/barbie.png'
+            titulo:'Festival de Arte e Cultura 2022',
+            sinopse:"Houveram palestras, oficinas, minicursos e rodas de conversa. Teve apresentações de trabalhos de estudantes dos ensino fundamental, ensino médio e técnico integrado de nível médio, de escolas públicas e privadas.",
+            imagem:'/arte-e-cultura.jpg'
         },
     ]
 
