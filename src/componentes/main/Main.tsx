@@ -30,13 +30,13 @@ export default function Main() {
         {
             id:3,
             titulo:'Curso preparatório para Interpretação e Produção Textual',
-            sinopse:'Foi realizada a preparação, por meio de encontros semanais, pois o seu foco era produção de redação.',
+            sinopse:'Foi realizada a preparação, por meio de encontros semanais em 2022, pois o seu foco era produção de redação.',
             imagem:'/boneca.jpg'
         },
         {
             id:5,
             titulo:'Minicurso FOCO no ENEM: Como produzir uma redação nota 1000?',
-            sinopse:"aaa.",
+            sinopse:"Participação no minicurso em 2022.",
             imagem:'/barbie.png'
         },
     ]
