@@ -1,5 +1,6 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Filme from './../filme/Filme'
+import axios from 'axios';
 import './Main.css'
 type FilmeType = {
     id:number,
@@ -72,6 +73,7 @@ export default function Main() {
                             />
                     )
                 }
+                
 
                 
                 {/* <Filme titulo='Barbie'
