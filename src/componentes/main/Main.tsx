@@ -1,80 +1,64 @@
-import { useState, useEffect } from 'react'
-import Filme from './../filme/Filme'
+import { useState, useEffect } from 'react';
+import Filme from './../filme/Filme';
 import axios from 'axios';
-import './Main.css'
+import './Main.css';
+
 type FilmeType = {
-    id:number,
-    titulo:string,
-    sinopse:string,
-    imagem:string
-}
+  id: number;
+  titulo: string;
+  sinopse: string;
+  imagem: string;
+};
 
 export default function Main() {
-    //let textodigitado = 'Barbie'
-    //Hooks são funções do React que ajudam a gente a fazer tarefas
-    //específicas
-    const [texto,setTexto]=useState("")
+  const [texto, setTexto] = useState('');
+  const [filmes, setFilmes] = useState<FilmeType[]>([]);
 
-    const filmes:FilmeType[] = [
-        {
-            id:1,
-            titulo:'Monitoria 2022',
-            sinopse:"Ficava à disposição para tirar as dúvidas e ajudar alguns alunos com dificuldades. Cada monitoria era realizada em um determinado horário, e somente para uma disciplina determinada.",
-            imagem:'/monitoria.jpg'
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_API_URL}/filme`, {
+        headers: {
+          Authorization: import.meta.env.VITE_API_KEY,
         },
-        {
-            id:2,
-            titulo:'Semana do Meio Ambiente 2023',
-            sinopse:'Participei do Minicurso - Propagação de plantas por métodos assexuados. O curso abordou o tema das técnicas de propagação de plantas via assexuada, tais como: enxertia por gemas, estacas e alporquias.',
-            imagem:'/semana-meio-ambiente.png'
-        },
-        {
-            id:3,
-            titulo:'Semana de Ciência e Tecnologia 2022',
-            sinopse:'Tiveram palestras, oficinas, mesas-redondas, além das Feiras de Ciência e Tecnologia, e espaços para apresentações de trabalhos científicos.',
-            imagem:'/ciencia-e-tecnologia.png'
-        },
-        {
-            id:5,
-            titulo:'Festival de Arte e Cultura 2022',
-            sinopse:"Houveram palestras, oficinas, minicursos e rodas de conversa. Teve apresentações de trabalhos de estudantes dos ensino fundamental, ensino médio e técnico integrado de nível médio, de escolas públicas e privadas.",
-            imagem:'/arte-e-cultura.jpg'
-        },
-    ]
+      })
+      .then((response) => {
+        setFilmes(response.data);
+      })
+      .catch((error) => {
+        console.error('Erro ao fazer a requisição:', error);
+      });
+  }, []);
 
-    //O parâmetro "e" da minha função será o meu evento que ocorreu
-    function TrataTexto(e:React.ChangeEvent<HTMLInputElement>){
-        //console.log(e.target.value)
-        //Como eu faço para mudar o texto para "TERE"
-        setTexto(e.target.value)
-    }
-    return (
-        <>
-            <div className="campo_pesquisa">
-                <p>Busque um Projeto</p>
-                <input type="text" 
-                       className='botao_pesquisa'
-                       placeholder='Pesquise um Título'
-                       onChange={TrataTexto} />
-                {texto && <p>Resultados Para: {texto} </p>}
-            </div>
-            <main className="content-main">
-                {/* 
-                    Use algo do vetor para tentar criar os filmes 
-                */}
-                {
-                    filmes.filter((filme)=>filme.titulo.toLowerCase().includes(texto)).map(
-                        (filme)=>
-                            <Filme 
-                                key={filme.id}
-                                sinopse={filme.sinopse}
-                                titulo={filme.titulo}
-                                imagem={filme.imagem}
-                            />
-                    )
-                }
-                
+  function TrataTexto(e: React.ChangeEvent<HTMLInputElement>) {
+    setTexto(e.target.value);
+  }
 
+
+
+
+  return (
+    <>
+      <div className="campo_pesquisa">
+        <p>Busque um Filme</p>
+        <input
+          type="text"
+          className="botao_pesquisa"
+          placeholder="Pesquise um Título"
+          onChange={TrataTexto}
+        />
+        {texto && <p>Resultados Para: {texto} </p>}
+      </div>
+      <main className="content-main">
+        {filmes
+          .filter((filme) => filme.titulo.toLowerCase().includes(texto))
+          .map((filme) => (
+            <Filme
+              key={filme.id}
+              sinopse={filme.sinopse}
+              titulo={filme.titulo}
+              imagem={filme.imagem}
+            />
+          ))}
                 
                 {/* <Filme titulo='Barbie'
                     sinopse='Depois de ser expulsa da 
@@ -135,3 +119,5 @@ export default function Main() {
         </>
     )
 }
+
+

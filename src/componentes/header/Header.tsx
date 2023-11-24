@@ -12,7 +12,7 @@ function Header(){
                         <Link texto='Home'/>
                     </li>
                     <li>
-                        <Link texto='Projetos'/>
+                        <Link texto='Filmes'/>
                     </li>
                     <li>
                         <Link texto='Sobre'/>
