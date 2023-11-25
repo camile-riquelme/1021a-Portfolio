@@ -10,23 +10,27 @@ type FilmeType = {
   imagem: string;
 };
 
+const URL_API = "http://localhost:3000/filmes";
+
 export default function Main() {
   const [texto, setTexto] = useState('');
-  const [filmes, setFilmes] = useState<FilmeType[]>([]);
+  const [filminhos, setFilminhos] = useState<FilmeType[]>([]);
 
   useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_API_URL}/filme`, {
-        headers: {
-          Authorization: import.meta.env.VITE_API_KEY,
-        },
-      })
-      .then((response) => {
-        setFilmes(response.data);
-      })
-      .catch((error) => {
-        console.error('Erro ao fazer a requisição:', error);
-      });
+    const buscaFilminhos = async () => {
+      try {
+        const resposta = await axios.get<FilmeType[]>(URL_API, {
+          headers: {
+            Authorization: import.meta.env.VITE_API_KEY,
+          },
+        });
+        setFilminhos(resposta.data);
+      } catch (error) {
+        console.error('Erro ao buscar os dados:', error);
+      }
+    };
+
+    buscaFilminhos();
   }, []);
 
   function TrataTexto(e: React.ChangeEvent<HTMLInputElement>) {
@@ -34,12 +38,40 @@ export default function Main() {
   }
 
 
+  const filmesLocais: FilmeType[] = [
+    {
+      id: 1,
+      titulo: 'Monitoria 2022',
+      sinopse: 'Ficava à disposição para tirar as dúvidas e ajudar alguns alunos com dificuldades. Cada monitoria era realizada em um determinado horário, e somente para uma disciplina determinada.',
+      imagem: '/monitoria.jpg',
+    },
+    {
+      id: 2,
+      titulo: 'Semana do Meio Ambiente 2023',
+      sinopse: 'Participei do Minicurso - Propagação de plantas por métodos assexuados. O curso abordou o tema das técnicas de propagação de plantas via assexuada, tais como: enxertia por gemas, estacas e alporquias.',
+      imagem: '/semana-meio-ambiente.png',
+    },
+    {
+      id: 3,
+      titulo: 'Semana de Ciência e Tecnologia 2022',
+      sinopse: 'Tiveram palestras, oficinas, mesas-redondas, além das Feiras de Ciência e Tecnologia, e espaços para apresentações de trabalhos científicos.',
+      imagem: '/ciencia-e-tecnologia.png',
+    },
+    {
+      id: 5,
+      titulo: 'Festival de Arte e Cultura 2022',
+      sinopse: "Houveram palestras, oficinas, minicursos e rodas de conversa. Teve apresentações de trabalhos de estudantes dos ensino fundamental, ensino médio e técnico integrado de nível médio, de escolas públicas e privadas.",
+      imagem: '/arte-e-cultura.jpg',
+    },
+  ];
 
+ 
+  const todosOsFilmes: FilmeType[] = [...filminhos, ...filmesLocais];
 
   return (
     <>
       <div className="campo_pesquisa">
-        <p>Busque um Filme</p>
+        <p>Busque um Projeto</p>
         <input
           type="text"
           className="botao_pesquisa"
@@ -49,7 +81,7 @@ export default function Main() {
         {texto && <p>Resultados Para: {texto} </p>}
       </div>
       <main className="content-main">
-        {filmes
+        {todosOsFilmes
           .filter((filme) => filme.titulo.toLowerCase().includes(texto))
           .map((filme) => (
             <Filme
@@ -59,6 +91,8 @@ export default function Main() {
               imagem={filme.imagem}
             />
           ))}
+
+
                 
                 {/* <Filme titulo='Barbie'
                     sinopse='Depois de ser expulsa da 
